@@ -1,0 +1,38 @@
+HIGGS
+
+Source: https://archive.ics.uci.edu/dataset/280/higgs
+OpenML version (98050 rows, used to create this sample): https://www.openml.org/d/23512
+Original paper: P. Baldi, P. Sadowski, D. Whiteson, "Searching for exotic particles in high-energy physics with deep
+learning", Nature Communications 5, 4308 (2014), https://doi.org/10.1038/ncomms5308
+License: CC BY 4.0
+
+Monte Carlo simulations of proton collisions in a particle accelerator. In both classes the collision ends with the same
+particles registered by the detector: a lepton (electron or muon), a neutrino (not registered directly, visible only
+as "missing energy") and four jets (narrow sprays of particles created by quarks). The task is to distinguish
+collisions where Higgs bosons were created (signal) from a background process that produces the same final particles.
+This file is a random sample of 60000 rows (rows with missing values removed), values rounded to 4 significant digits.
+60000 rows, 29 columns. The target variable is class.
+
+Columns:
+
+21 low-level features, measured by the detector (pT - transverse momentum, eta - pseudorapidity, i.e. angle relative
+to the beam axis, phi - azimuthal angle around the beam axis, b-tag - how likely the jet comes from a b quark):
+lepton_pT, lepton_eta, lepton_phi: lepton
+missing_energy_magnitude, missing_energy_phi: missing energy (carried away by the neutrino)
+jet1pt, jet1eta, jet1phi, jet1b-tag: jet 1
+jet2pt, jet2eta, jet2phi, jet2b-tag: jet 2
+jet3pt, jet3eta, jet3phi, jet3b-tag: jet 3
+jet4pt, jet4eta, jet4phi, jet4b-tag: jet 4
+
+7 high-level features, invariant masses computed by physicists from the low-level features:
+m_jj: mass of two jets
+m_jjj: mass of three jets
+m_lv: mass of the lepton and the neutrino
+m_jlv: mass of a jet, the lepton and the neutrino
+m_bb: mass of the two jets tagged as b jets
+m_wbb: mass of a W boson and two b jets
+m_wwbb: mass of two W bosons and two b jets
+
+class: whether the collision is a signal process with a Higgs boson (1) or a background process (0)
+
+All features were normalized by the dataset authors, so their units are arbitrary.

@@ -1,0 +1,31 @@
+Default of Credit Card Clients
+
+Source: https://archive.ics.uci.edu/dataset/350/default+of+credit+card+clients
+Original paper: I-C. Yeh, C-H. Lien, "The comparisons of data mining techniques for the predictive accuracy of
+probability of default of credit card clients", Expert Systems with Applications 36 (2009), 2473-2480,
+https://doi.org/10.1016/j.eswa.2007.12.020
+License: CC BY 4.0
+
+Credit card clients of a bank in Taiwan, data from April to September 2005. The task is to predict whether the client
+will default on the credit card payment (will not pay the bill) in the next month (October 2005).
+The column "default payment next month" was renamed to "default", otherwise the data is unchanged.
+30000 rows, 25 columns. The target variable is default. All amounts are in New Taiwan dollars (NT$).
+
+Columns:
+
+ID: client ID
+LIMIT_BAL: amount of the given credit (individual and family credit)
+SEX: 1 - male, 2 - female
+EDUCATION: 1 - graduate school, 2 - university, 3 - high school, 4 - others, 0, 5, 6 - unknown
+MARRIAGE: 1 - married, 2 - single, 3 - others, 0 - unknown
+AGE: age in years
+PAY_0, PAY_2, PAY_3, PAY_4, PAY_5, PAY_6: repayment status in September, August, July, June, May and April 2005
+    -2 - no credit card use in that month
+    -1 - paid in full
+     0 - paid the minimum amount (revolving credit)
+     1 - payment delay for one month, 2 - delay for two months, ..., 8 - delay for eight months, 9 - delay for nine
+         months or more
+    (there is no PAY_1 column, this is the naming in the original data)
+BILL_AMT1, ..., BILL_AMT6: amount of the bill statement in September, August, ..., April 2005
+PAY_AMT1, ..., PAY_AMT6: amount paid in September, August, ..., April 2005
+default: whether the client defaulted on the payment in October 2005 (1) or not (0)

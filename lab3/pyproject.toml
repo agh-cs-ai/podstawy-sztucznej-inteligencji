@@ -1,0 +1,38 @@
+[project]
+name = "basics-of-ai-agh-lab3"
+version = "1.0.0"
+description = "Basics of Artificial Intelligence course at AGH - lab 3: neural networks"
+authors = []
+requires-python = "==3.12.*"
+
+dependencies = [
+    # general
+    "matplotlib",
+    "numpy",
+    "pandas>=3.0",
+    # lab 3 - neural networks
+    "onnx",
+    "onnxruntime",
+    "onnxscript",
+    "pyarrow",  # Parquet files
+    "scikit-learn>=1.8",
+    "torch>=2.8.0",
+]
+
+[dependency-groups]
+dev = [
+    # not exported to requirements.txt, it breaks Google Colab
+    "jupyter",
+]
+
+# CPU-only PyTorch on Linux and Windows (much smaller than the default CUDA version, GPU is not needed in this lab);
+# PyPI on macOS, where it is CPU/MPS-only anyway
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cpu", marker = "sys_platform != 'darwin'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
