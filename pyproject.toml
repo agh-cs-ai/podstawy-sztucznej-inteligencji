@@ -17,15 +17,16 @@ dependencies = [
     # lab 1 - linear models
     "feature-engine>=1.9",
     "scikit-learn>=1.8",
-    # lab 2 - ensembles, imbalanced data
-    "imbalanced-learn>=0.14.0",
+    # lab 2 - classification, decision trees, ensembles
     "lightgbm==4.*",
     # lab 3 - neural networks
-    "optuna",
+    "onnx",
+    "onnxruntime",
+    "onnxscript",
+    "pyarrow",  # Parquet files
     "torch>=2.8.0",
     # lab 4 - computer vision
-    "opencv-python-headless",
-    "pillow",
+    "optuna>=4",
     "torchvision",
     # lab 5 - transformers, NLP
     "accelerate",
