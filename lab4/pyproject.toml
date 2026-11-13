@@ -1,0 +1,38 @@
+[project]
+name = "basics-of-ai-agh-lab4"
+version = "1.0.0"
+description = "Basics of Artificial Intelligence course at AGH - lab 4: computer vision"
+authors = []
+requires-python = "==3.12.*"
+
+dependencies = [
+    # general
+    "matplotlib",
+    "numpy",
+    # lab 4 - computer vision
+    "optuna>=4",
+    "scikit-learn>=1.8",
+    "torch>=2.8.0",
+    "torchvision",
+]
+
+[dependency-groups]
+dev = [
+    # not exported to requirements.txt, it breaks Google Colab
+    "jupyter",
+]
+
+# CUDA PyTorch on Linux and Windows (GPU is strongly recommended in this lab, PyPI wheels are CPU-only
+# on Windows; CUDA wheels also work without a GPU, falling back to CPU); PyPI on macOS, where it uses MPS
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu130", marker = "sys_platform != 'darwin'" },
+]
+torchvision = [
+    { index = "pytorch-cu130", marker = "sys_platform != 'darwin'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
