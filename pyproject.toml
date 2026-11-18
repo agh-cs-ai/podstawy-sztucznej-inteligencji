@@ -64,3 +64,8 @@ select = ["E4", "E7", "E9", "F", "I", "UP"]
 # in later cells, unused variables like fig in "fig, ax = plt.subplots()",
 # short variable names like l in comprehensions
 "*.ipynb" = ["E402", "E741", "F811", "F841"]
+
+[tool.uv.workspace]
+members = [
+    "lab3",
+]
